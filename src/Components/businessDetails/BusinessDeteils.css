@@ -1,0 +1,21 @@
+
+#logo {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 4;
+  
+  
+}
+
+#details {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%)
+
+  
+
+}
+#businessDetails{
+  margin-bottom: 13%;
+}

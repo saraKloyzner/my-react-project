@@ -1,0 +1,16 @@
+#form{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: auto;
+    /* transform: translate(-50%) */
+}
+.textField{
+    margin-top: 5%;
+   
+}

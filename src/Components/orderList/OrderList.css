@@ -1,0 +1,29 @@
+.green {
+    border: green solid 3px;
+   
+}
+
+.red {
+    border: red solid 3px;
+  
+}
+
+.orange {
+    border: orange solid 3px;
+ 
+}
+.orange,.green,.red{
+    width: 40%;
+    height: 30%;
+    border-radius:25px;
+    margin: auto;
+    padding: auto;
+    margin-top: 5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    flex-wrap: wrap;
+}
+#div{
+    display: flex;
+    flex-wrap: wrap;
+}

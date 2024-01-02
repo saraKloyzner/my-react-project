@@ -1,0 +1,27 @@
+#buttonLogin {
+    color: rgb(74, 74, 216);
+    /* position: absolute; */
+    left: 50%;
+
+    transform: translate(-50%);
+
+}
+
+#loginForm {
+    width: 30vw;
+    height: 25vh;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    position: absolute;
+
+
+}
+
+#password {
+    /* position: relative; */
+    position: relative;
+    justify-content: center;
+}
