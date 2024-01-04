@@ -115,22 +115,18 @@ class BBDetailsStor {
 
             business: observable,
             BBDetails: observable,
-            //  initBBDetails: action,//איתחול פרטי צימרים ע"י שליחה לשרת
-            //  introducingTheBBs: action,//מקבלת מהשרת את פרטי הצימרים
-            //  setBBDetails: action,//הכבנסת ערכים מעודכים לרשימת הצימרים להשכרה
             initBusinessDetails: action,//איתחול פרטי עסק
             postBusinessDetails: action,//עידכון פרטי עסק
             showingBusinessDetails: action,//הצגת פרטי עסק
             setBusiness: action,//הכנסת פרטי עסק מעודכנים
 
-            // login: action,
             isBussinesDetailsPost: observable,
             setIsBussinesDetailsPost: observable,
             initialServices: action,
             postBBDetails: action,
             initialServices: action,
             isLogin: observable,
-            // addBBDetils:action
+          
             initialBBDetails: action,
 
         })
@@ -144,29 +140,6 @@ class BBDetailsStor {
             }
         }
         fetchBusinessDataExists()
-        //   const fetchBusinessDataExists = async () => {
-        //     const bus = await this.initialDetails();
-        //     if (Object.keys(bus).length === 0)
-        //     {
-        //       this.updateDetails(this.business); 
-        //     }
-        //     else{
-        //       this.business = bus;
-        //     }
-        //   }
-        //   fetchBusinessDataExists()
-        // const fetchServicesExists = async () => {
-        //     const ser = await this.initialServices();
-        //     if (ser.length === 0) {
-        //         this.BBDetails.forEach((service) => this.postBBDetails(service));
-        //     }
-        //     else {
-        //         this.BBDetails = ser;
-        //     }
-        // }
-        // fetchServicesExists();
-
-
         const fetchServicesExists = async () => {
             const ser = await this.initialServices();
             console.log("ser", ser)
@@ -176,8 +149,6 @@ class BBDetailsStor {
                     this.initialBBDetails(details);
                     console.log(details, "details")
                 })
-                // this.BBDetails.forEach((service) =>console.log("service",service)); 
-                // this.BBDetails.forEach((service) => this.postBBDetails(service)); 
                 console.log("BBDetails", this.BBDetails)
                 console.log("00000000000000")
             }
@@ -187,49 +158,7 @@ class BBDetailsStor {
         }
         fetchServicesExists();
     }
-    // addBBService = async ({ id: id, name: name, price: price, duration: duration,picture:picture,
-    //     numberOfPersons: numberOfPersons, numberOfRooms: numberOfRooms }) => {
 
-
-    //     const response = await fetch("http://localhost:8787/service", {
-    //         method: "POST",
-    //         body: JSON.stringify({
-    //             id: id, name: name, price: price, duration: duration,picture:picture,
-    //             numberOfPersons: numberOfPersons, numberOfRooms: numberOfRooms
-    //         }),
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //     });
-
-    //     console.log(response.statusText)
-    //     this.isBussinesDetailsPost=true;
-    // }
-
-
-    // login = async () => {
-    //     // ==={name:name,password:password}
-    //     const response = await fetch("http://localhost:8787/login", {
-    //         method: "POST",
-    //         body: JSON.stringify({//הופך את האוביקט לstring וככה האוביקט נשלח נכון בfetch
-    //             // name, password
-    //             name: name,
-    //             password: password
-    //         }),
-    //         headers: {
-    //             "Content-Type": "application/json",//כותרת שתשלח כחלק מהרקווסט ותגדיר שהמשתנים נשלחים וחוזרים במבנה של json
-    //         },
-    //     });
-    //     console.log(response.statusText)
-
-    //     if (response.status === 200) {
-    //        this.isLogin=true;
-    //     }
-    //     // if (response.status === 401) {
-    //     //     setName('')
-    //     //     setPassword('')
-    //     // }
-    // }
     postBBDetails = async (newService) => {
         console.log("newService",newService)
         const response = await fetch("http://localhost:8787/service", {
@@ -244,7 +173,7 @@ class BBDetailsStor {
         if (response.status === 200) {
             this.BBDetails = ([...this.BBDetails, newService])
             console.log(this.BBDetails)
-            // this.BBDetails = newService;
+           
             Swal.fire({
                 icon: "success",
                 title: "עריכת הפרטים הסתיימה בהצלחה",
@@ -283,10 +212,10 @@ class BBDetailsStor {
 
         const response = await fetch("http://localhost:8787/services");
         const data = await response.json();
-        // this.BBDetails = (this.BBDetails,[...data]);
+    
         return data;
     }
-    // } 
+
     setBusiness(data) {
         this.business = data;
     }
@@ -323,7 +252,6 @@ class BBDetailsStor {
                 title: "עריכת הפרטים הסתיימה בהצלחה",
                 text: "קוד אשור: 285423668",
             });
-
         }
         else {
             Swal.fire({
@@ -333,19 +261,13 @@ class BBDetailsStor {
 
             });
         }
-        // isBussinesDetailsPost=true;
-
     }
 
     showingBusinessDetails = async () => {
         console.log("-------------------")
         const response1 = await fetch("http://localhost:8787/businessData")
         const data = await response1.json();
-
         return data;
-
-
-
     }
 }
 export default new BBDetailsStor();
