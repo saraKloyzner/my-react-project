@@ -9,13 +9,13 @@ const BusinessDetails = (observer(() => {
     useEffect(() => {
         BBDetailsStor.showingBusinessDetails();
         
-    }, [ BBDetailsStor.showingBusinessDetails])
+    }, [ ])
 
     return (
         <>
             <div id='businessDetails'>
 
-                <img id='logo' src={BBDetailsStor.business.logo}></img>
+                <img id='logo' src={BBDetailsStor.business.logo}alt="תמונת פרטי עסק"></img>
                 <div id='details'>
                     <h3> {BBDetailsStor.business.name}</h3>
                     <h1>{BBDetailsStor.business.description}</h1>

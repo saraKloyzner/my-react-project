@@ -30,16 +30,16 @@ const router = createBrowserRouter([
 
         path: 'edit',
         element: <Edit />,
-        errorElement: <div>error rented B&Bs not found</div>
+        errorElement: <div>error edit not found</div>
       },
       {
         path: 'orderList',
         element: <OrderList />,
-        errorElement: <div>error B&Bs for rent not found</div>
+        errorElement: <div>error orderList not found</div>
       },{
         path: 'addBB',
         element: <AddBB />,
-        errorElement: <div>error B&Bs for rent not found</div>
+        errorElement: <div>error addBB for rent not found</div>
       }]
   }
   // {

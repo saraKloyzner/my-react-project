@@ -24,10 +24,10 @@ import HourglassTopSharpIcon from '@mui/icons-material/HourglassTopSharp';
 const BBDetails = (observer(() => {
   
     const theme = useTheme();
-    useEffect(() => {
-        BBDetailsStor.initialServices()
+    // useEffect(() => {
+    //     BBDetailsStor.initialServices()
        
-    }, [])
+    // }, [])
     return (
         <>
             {BBDetailsStor.BBDetails.map((details, index) => {
@@ -76,7 +76,7 @@ const BBDetails = (observer(() => {
 
                                     sx={{ width: 151 }}
                                     image={details.picture}
-                                    alt="Live from space album cover"
+                                    alt="תמונת צימר"
 
                                 />
 

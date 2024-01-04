@@ -11,7 +11,7 @@ const OrderList = (observer(() => {
        
         const diffDays = Math.ceil(x / (1000 * 3600 * 24));
       
-        if (diffDays === 1)//today
+        if (diffDays === 0)//today
             return 0
         
         if (diffDays <= 7)//this week

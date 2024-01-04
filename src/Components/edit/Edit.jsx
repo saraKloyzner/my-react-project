@@ -28,7 +28,7 @@ const Edit = (observer(() => {
         id: id, name: name, owner: owner, logo: logo, description: description, mail: mail,
       }
     );
-    BBDetailsStor.setIsBussinesDetailsPost(true);
+   // BBDetailsStor.setIsBussinesDetailsPost(true);
     BBDetailsStor.showingBusinessDetails();
   }
 

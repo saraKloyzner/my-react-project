@@ -21,13 +21,13 @@ function AddBB() {
 
 
     const handleAddBB = () => {
-        BBDetailsStor.addBBService({
+        BBDetailsStor.postBBDetails({
             id: id, name: name, price: price, duration: duration, picture: picture,
             address: address, numberOfPersons: numberOfPersons, numberOfRooms: numberOfRooms
         });
-        if (BBDetailsStor.isBussinesDetailsPost === true)
-            setPost(true);
-        BBDetailsStor.isBussinesDetailsPost === false;
+        // if (BBDetailsStor.isBussinesDetailsPost === true)
+        //     setPost(true);
+        // BBDetailsStor.isBussinesDetailsPost === false;
        
     }
     return (

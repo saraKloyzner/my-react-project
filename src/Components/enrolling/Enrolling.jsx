@@ -10,6 +10,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import RentingStor from '../../stores/renting'
 import { observer } from 'mobx-react';
+import zIndex from '@mui/material/styles/zIndex';
 
 const style = {
   position: 'absolute',
@@ -43,6 +44,7 @@ const Enrolling=(observer(({ id })=> {
 
 
   const handleAddOrder = () => {
+    setOpen(false)
     RentingStor.postRenting({ serviceType: id, clientName: invitingName, clientPhone: invitingPhone, clientEmail: invitingMail, dateTime: invitingDate })
     setInvitingName('');
     setinvitingPhone('');

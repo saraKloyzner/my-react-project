@@ -9,7 +9,7 @@ import BBDetailsStor from '../../stores/BBDetailsStor'
 import BusinessDetails from '../businessDetails/BusinessDetails'
 import './Admin.css'
 import { observer } from 'mobx-react';
-
+import Swal from 'sweetalert2'
 
 import BusinessOwnerScreen from '../businessOwnerScreen/BusinessOwnerScreen';
 const Admin = (observer(() => {
@@ -18,7 +18,7 @@ const Admin = (observer(() => {
   // const [isLogin, setIsLogin] = useState(false);
   const [wasThereAnErrorLoggingIn, setWasThereAnErrorLoggingIn] = useState(false)
 
-  
+
   const handleLogin = async () => {
 
     const response = await fetch("http://localhost:8787/login", {
@@ -34,23 +34,29 @@ const Admin = (observer(() => {
     if (response.status === 200) {
       // setIsLogin(true)
       BBDetailsStor.isLogin = true;
-      console.log("locl", localStorage.getItem("isLog"))
+     
       localStorage.setItem("isLog", "true")
-      console.log(localStorage.getItem("isLog"))
+    
 
     }
     if (response.status === 401) {
       setName('')
       setPassword('')
-      setWasThereAnErrorLoggingIn(true)
+      setWasThereAnErrorLoggingIn(true);
+      Swal.fire({
+        icon: "error",
+        title: "...אופס",
+        text: "שם המשתמש/הסיסמה אינו/ם נכונים, נסה שנית",
+       
+      });
     }
   }
   return (
 
     <>
-      {!localStorage.getItem("isLog") && localStorage.getItem("isLog") === null ? <>
+       {BBDetailsStor.isLogin === null ? <>
         <BusinessDetails />
-        {wasThereAnErrorLoggingIn ? <div>שם המשתמש/הסיסמה אינו/ם נכונים, נסה שנית</div> : <div></div>}
+        {/* {wasThereAnErrorLoggingIn ? <div>שם המשתמש/הסיסמה אינו/ם נכונים, נסה שנית</div> : <div></div>} */}
 
         <div id="loginForm">
 

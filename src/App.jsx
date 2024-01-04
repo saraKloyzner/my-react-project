@@ -11,6 +11,10 @@ import BusinessDetails from './Components/businessDetails/BusinessDetails';
 const App = (observer(() => {
 
 
+  useEffect(() => {
+    localStorage.removeItem('isLog');
+    
+}, [ ])
   return (
     <>
       <BusinessDetails />
