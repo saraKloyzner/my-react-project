@@ -1,7 +1,7 @@
 import { observer } from "mobx-react";
 import { useEffect } from "react";
 import RentingStor from "../../stores/renting";
-import '../orderList/orderList.css'
+// import '../orderList/orderList.css'
 const OrderList = (observer(() => {
 
     const getColr = (datetime) => {
